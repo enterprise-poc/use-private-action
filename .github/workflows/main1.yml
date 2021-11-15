@@ -10,5 +10,6 @@ jobs:
         with:
           repository: matdavy1/javascript-action
           ref: v10
+      - name: run action
         uses: ./goodbye
     

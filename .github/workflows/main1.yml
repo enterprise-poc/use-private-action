@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name:  A job to say goodbye and hello
     steps:
-      - uses: matdavy1/javascript-action/hello@v11
-      - uses: matdavy1/javascript-action/goodbye@v11
+      - uses: matdavy1/javascript-action/hello@v12
+      - uses: matdavy1/javascript-action/goodbye@v12
     
     

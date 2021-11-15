@@ -3,9 +3,9 @@ on: [push, workflow_dispatch]
 jobs:
   goodbye_world_job:
     runs-on: ubuntu-latest
-    name:  A job to say goodbye
+    name:  A job to say goodbye and hello
     steps:
-      - uses: managedkaos/github-actions-two-actions/hello@v11
-      - uses: managedkaos/github-actions-two-actions/goodbye@v11
+      - uses: matdavy1/javascript-action/hello@v11
+      - uses: matdavy1/javascript-action/goodbye@v11
     
     

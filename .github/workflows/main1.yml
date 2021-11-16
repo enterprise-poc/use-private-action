@@ -5,7 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     name:  A job to say goodbye and hello
     steps:
-      - uses: matdavy1/javascript-action/hello@v12
-      - uses: matdavy1/javascript-action/goodbye@v12
+    - uses: bagbyte/use-private-action@v0.0.2
+      with:
+        private-action: 
+        private-action-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+      - uses: matdavy1/javascript-action/hello@v13
+      - uses: matdavy1/javascript-action/goodbye@v13
     
     

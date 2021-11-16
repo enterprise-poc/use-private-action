@@ -8,9 +8,8 @@ jobs:
     - uses: bagbyte/use-private-action@v0.0.2
       with:
         private-action: matdavy1/javascript-action/hello@v15
-        with:
-          who-to-greet: 'Mat'
         private-action-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+        who-to-greet: 'Mat'
       # - uses: matdavy1/javascript-action/hello@v13
       # - uses: matdavy1/javascript-action/goodbye@v13
     

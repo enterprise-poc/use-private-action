@@ -26,7 +26,7 @@ jobs:
           token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
           path: ./.github/actions/my-private-repo
       - name: run my action
-        uses: ./.github/actions/my-private-repo/hello/dist/index.js
+        uses: ./.github/actions/my-private-repo/hello
         with:
           who-to-greet: 'Mat'
   

@@ -1,3 +1,16 @@
+# on: [push, workflow_dispatch]
+
+# jobs:
+#   goodbye_world_job:
+#     runs-on: ubuntu-latest
+#     name:  A job to say goodbye and hello
+#     steps:
+#     - uses: bagbyte/use-private-action@v0.0.2
+#       with:
+#         private-action: matdavy1/javascript-action/hello@v15
+#         private-action-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+#         who-to-greet: 'Mat'
+
 on: [push, workflow_dispatch]
 
 jobs:
@@ -5,12 +18,17 @@ jobs:
     runs-on: ubuntu-latest
     name:  A job to say goodbye and hello
     steps:
-    - uses: bagbyte/use-private-action@v0.0.2
+    - name: Check out repository
+    - uses: actions/checkout@v2
       with:
-        private-action: matdavy1/javascript-action/hello@v15
-        private-action-token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+        repository: matdavy1/javascript-action
+        ref: v15
+        token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
+        path: ./.github/actions/my-private-repo
+    - name: run my action
+      uses: ./.github/actions/my-private-repo/hello/dist/index.js
+      with:
         who-to-greet: 'Mat'
-      # - uses: matdavy1/javascript-action/hello@v13
-      # - uses: matdavy1/javascript-action/goodbye@v13
+  
     
     

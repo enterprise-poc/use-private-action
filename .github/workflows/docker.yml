@@ -13,9 +13,9 @@ jobs:
           token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
           path: ./docker-action-library
       - name: run hello action
-        uses: ./docker-action-library/hello/script
-        with:
-          who-to-greet: 'Mat'
+        run: groovy ./docker-action-library/hello/script.groovy mat
+        # with:
+        #   who-to-greet: 'Mat'
       # - name: run goodbye action
       #   uses: ./docker-action-library/goodbye/
       #   with:

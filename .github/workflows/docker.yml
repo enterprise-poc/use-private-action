@@ -17,6 +17,6 @@ jobs:
         with:
           who-to-greet: 'Mat'
       - name: run goodbye action
-        uses: ./docker-action-library/hello/
+        uses: ./docker-action-library/goodbye/
         with:
           who-to-greet: 'Mat'

@@ -9,10 +9,14 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: matdavy1/docker-action-library
-          ref: v14
+          ref: v15
           token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
           path: ./docker-action-library
-      - name: run my action
-        uses: ./docker-action-library/
+      - name: run hello action
+        uses: ./docker-action-library/hello/
+        with:
+          who-to-greet: 'Mat'
+      - name: run goodbye action
+        uses: ./docker-action-library/hello/
         with:
           who-to-greet: 'Mat'

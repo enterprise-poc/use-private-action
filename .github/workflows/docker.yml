@@ -13,6 +13,7 @@ jobs:
           token: ${{ secrets.PRIVATE_REPO_ACCESS_TOKEN }}
           path: ./docker-action-library
       - name: run hello action
+        uses: ./docker-action-library/hello/
         with:
           who-to-greet: 'Mat'
       - name: run goodbye action
